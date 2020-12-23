@@ -1,0 +1,15 @@
+﻿<Window x:Class="FileAutomation_1._0.test"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FileAutomation_1._0"
+        mc:Ignorable="d"
+        Title="test" Height="450" Width="800">
+    <Grid>
+        <DockPanel HorizontalAlignment="Left" Height="420" LastChildFill="False" VerticalAlignment="Top" Width="794" Margin="0,0,-0.4,0">
+            <ToolBar Height="420" VerticalAlignment="Top" Width="100"/>
+        </DockPanel>
+
+    </Grid>
+</Window>
