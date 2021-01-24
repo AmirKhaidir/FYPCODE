@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:FileAutomation_1._0.Views"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-     Title="Insert mouse click action" Height="323" Width="403">
+     Title="Insert mouse click action" Height="323" Width="403" WindowStartupLocation="CenterScreen">
     <Grid>
         <Label Content="Click to capture the mouse position" Margin="100,33,95.6,0" VerticalAlignment="Top" Padding="0,5,5,5"/>
         <Label Content="Button" HorizontalAlignment="Left" Margin="100,69,0,0" VerticalAlignment="Top" Padding="0,5,5,5" RenderTransformOrigin="0.323,0.469"/>

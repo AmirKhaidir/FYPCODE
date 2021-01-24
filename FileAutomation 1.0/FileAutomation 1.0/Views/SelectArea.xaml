@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FileAutomation_1._0.Views"
         mc:Ignorable="d"
-        Title="SelectArea"  Height="450" Width="800" AllowsTransparency="True" WindowStyle="None" Background="Transparent" ShowInTaskbar="False" ResizeMode="CanResizeWithGrip">
+        Title="SelectArea"  Height="450" Width="800" AllowsTransparency="True" WindowStyle="None" Background="Transparent" ShowInTaskbar="False" ResizeMode="CanResizeWithGrip" WindowStartupLocation="CenterScreen">
     <Canvas x:Name="canvas" MouseDown="canvas_MouseDown" Background="White">
 
         <Button Content="Capture This!" Canvas.Left="10" Canvas.Top="10" Click="Button_Click" Height="37" Width="81" MinHeight="37" MinWidth="70"/>

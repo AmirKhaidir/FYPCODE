@@ -1,0 +1,159 @@
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\x86\leptonica-1.80.0.dll
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\x86\tesseract41.dll
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\x64\leptonica-1.80.0.dll
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\x64\tesseract41.dll
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\FileAutomation 1.0.exe.config
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\FileAutomation 1.0.exe
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\FileAutomation 1.0.pdb
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\DevExpress.Data.v20.2.dll
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Dragablz.dll
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\GdPicture.NET.14.dll
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\IronOcr.Assets.dll
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\IronOcr.dll
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\MaterialDesignColors.dll
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.Barcode.dll
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.DataExport.dll
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.DataExport.ResourceMgr.dll
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.Doc.dll
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.DocViewer.Forms.dll
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.Email.dll
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.License.dll
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.OfficeViewer.Forms.dll
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.Pdf.dll
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.PdfViewer.Asp.dll
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.PdfViewer.Forms.dll
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.Presentation.dll
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.Spreadsheet.dll
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.XLS.dll
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\System.Drawing.Common.dll
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\System.Management.Automation.dll
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Tesseract.dll
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Microsoft.mshtml.dll
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\DevExpress.Data.v20.2.xml
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Dragablz.pdb
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Dragablz.xml
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\GdPicture.NET.14.xml
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\IronOcr.xml
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.Barcode.xml
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.DataExport.xml
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.Doc.xml
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.DocViewer.Forms.xml
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.Email.xml
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.License.xml
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.OfficeViewer.Forms.xml
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.Pdf.xml
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.PdfViewer.Asp.xml
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.PdfViewer.Forms.xml
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.Presentation.xml
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.Spreadsheet.xml
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.XLS.xml
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\MainWindow.g.cs
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\test.g.cs
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\Views\CreateInsertKeyWindow.g.cs
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\Views\CreateManualClickWindow.g.cs
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\Views\CreateManualTypeKeyWindow.g.cs
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\Views\CreateWaitWindow.g.cs
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\Views\ExtracctText.g.cs
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\Views\SelectArea.g.cs
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\App.g.cs
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\FileAutomation 1.0_MarkupCompile.cache
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\FileAutomation 1.0_MarkupCompile.lref
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\MainWindow.baml
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\test.baml
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\Views\CreateInsertKeyWindow.baml
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\Views\CreateManualClickWindow.baml
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\Views\CreateManualTypeKeyWindow.baml
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\Views\CreateWaitWindow.baml
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\Views\ExtracctText.baml
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\Views\SelectArea.baml
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\FileAutomation 1.0.g.resources
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\FileAutomation_1._0.Properties.Resources.resources
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\FileAutomation1.0.csproj.GenerateResource.cache
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\FileAutomation1.0.csproj.CoreCompileInputs.cache
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\FileAutomation1.0.csproj.CopyComplete
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\FileAutomation 1.0.exe
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\FileAutomation 1.0.pdb
+C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\FileAutomation1.0.csprojAssemblyReference.cache
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\x86\leptonica-1.80.0.dll
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\x86\tesseract41.dll
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\x64\leptonica-1.80.0.dll
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\x64\tesseract41.dll
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\FileAutomation 1.0.exe.config
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\FileAutomation 1.0.exe
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\FileAutomation 1.0.pdb
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\DevExpress.Data.v20.2.dll
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Dragablz.dll
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\IronOcr.Assets.dll
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\IronOcr.dll
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\MaterialDesignColors.dll
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.Barcode.dll
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.DataExport.dll
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.DataExport.ResourceMgr.dll
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.Doc.dll
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.DocViewer.Forms.dll
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.Email.dll
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.License.dll
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.OfficeViewer.Forms.dll
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.Pdf.dll
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.PdfViewer.Asp.dll
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.PdfViewer.Forms.dll
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.Presentation.dll
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.Spreadsheet.dll
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.XLS.dll
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\System.Drawing.Common.dll
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\System.Management.Automation.dll
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Tesseract.dll
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Microsoft.mshtml.dll
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\DevExpress.Data.v20.2.xml
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Dragablz.pdb
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Dragablz.xml
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\GdPicture.NET.14.xml
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\IronOcr.xml
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.Barcode.xml
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.DataExport.xml
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.Doc.xml
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.DocViewer.Forms.xml
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.Email.xml
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.License.xml
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.OfficeViewer.Forms.xml
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.Pdf.xml
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.PdfViewer.Asp.xml
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.PdfViewer.Forms.xml
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.Presentation.xml
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.Spreadsheet.xml
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\bin\Debug\Spire.XLS.xml
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\FileAutomation1.0.csprojAssemblyReference.cache
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\MainWindow.g.cs
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\test.g.cs
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\Views\CreateInsertKeyWindow.g.cs
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\Views\CreateManualClickWindow.g.cs
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\Views\CreateManualTypeKeyWindow.g.cs
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\Views\CreateWaitWindow.g.cs
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\Views\ExtracctText.g.cs
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\Views\SelectArea.g.cs
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\App.g.cs
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\FileAutomation 1.0_MarkupCompile.cache
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\FileAutomation 1.0_MarkupCompile.lref
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\MainWindow.baml
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\test.baml
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\Views\CreateInsertKeyWindow.baml
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\Views\CreateManualClickWindow.baml
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\Views\CreateManualTypeKeyWindow.baml
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\Views\CreateWaitWindow.baml
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\Views\ExtracctText.baml
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\Views\SelectArea.baml
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\FileAutomation 1.0.g.resources
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\FileAutomation_1._0.Properties.Resources.resources
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\FileAutomation1.0.csproj.GenerateResource.cache
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\FileAutomation1.0.csproj.CoreCompileInputs.cache
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\FileAutomation1.0.csproj.CopyComplete
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\FileAutomation 1.0.exe
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\FileAutomation 1.0.pdb

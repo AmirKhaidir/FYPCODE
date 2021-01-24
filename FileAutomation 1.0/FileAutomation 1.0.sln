@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileAutomation 1.0", "FileAutomation 1.0\FileAutomation 1.0.csproj", "{DC1FC6E7-C31E-42D6-9D9A-BA02ABE172FA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileAutomation1.0", "FileAutomation 1.0\FileAutomation1.0.csproj", "{DC1FC6E7-C31E-42D6-9D9A-BA02ABE172FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

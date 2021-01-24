@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Debug\
 FileAutomation_1._0
 none
 false
 DEBUG;TRACE
-C:\Users\Acer\source\repos\FileAutomation 1.0\FileAutomation 1.0\App.xaml
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\App.xaml
 861271851
 
-27-830474106
-43-405744091
+2884998082
+46-1230592163
 MainWindow.xaml;test.xaml;Views\CreateInsertKeyWindow.xaml;Views\CreateManualClickWindow.xaml;Views\CreateManualTypeKeyWindow.xaml;Views\CreateWaitWindow.xaml;Views\ExtracctText.xaml;Views\SelectArea.xaml;
 
-True
+False
 

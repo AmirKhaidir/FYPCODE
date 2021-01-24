@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FileAutomation_1._0.Views"
       mc:Ignorable="d" 
-      Title="Insert text" Height="301.6" Width="300" Icon="/FileAutomation 1.0;component/Images/strikethrough.png">
+      Title="Insert text" Height="301.6" Width="300" Icon="/FileAutomation 1.0;component/Images/strikethrough.png" WindowStartupLocation="CenterScreen">
     <Grid>
         <Label Content="Enter key to insert:" HorizontalAlignment="Left" Margin="27,38,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.521,0.961" Padding="0,5,5,5"/>
         <TextBox x:Name="tbxInsert" HorizontalAlignment="Center" Height="146" Margin="0,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240"/>

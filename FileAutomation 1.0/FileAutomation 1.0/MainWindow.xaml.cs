@@ -11,17 +11,16 @@ using FileAutomation_1._0.Helper;
 using System.Windows.Forms;
 using System.Windows.Automation;
 using System.Windows.Input;
-using System.Windows.Xps.Packaging;
-using Microsoft.Office.Interop.Word;
 using System.IO;
 using GdPicture14;
-using System.Text.RegularExpressions;
 using System.Linq;
 using IronOcr;
 using System.Windows.Documents;
 using System.Drawing;
 using System.Windows.Media.Imaging;
 using System.Drawing.Imaging;
+using System.Text;
+using System.Windows.Media;
 
 namespace FileAutomation_1._0
 {
@@ -43,8 +42,7 @@ namespace FileAutomation_1._0
         public MainWindow()
         {
             InitializeComponent();
-            LicenseManager lm = new LicenseManager();
-            lm.RegisterKEY("0481484039779637361392356");
+
             myFile = new List<Filess>();
             recordList = new List<Record>();
             ((INotifyCollectionChanged)listView.Items).CollectionChanged += ListView_CollectionChanged;
@@ -86,7 +84,6 @@ namespace FileAutomation_1._0
         }
 
 
-
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);
@@ -113,17 +110,83 @@ namespace FileAutomation_1._0
             //mouseHook.OnMouseMove += MouseHook_OnMouseMove;
             //mouseHook.OnMouseWheelEvent += MouseHook_OnMouseWheelEvent;
             //mouseHook.Install();
+
+            LicenseManager lm = new LicenseManager();
+            lm.RegisterKEY("0402451051843103834661532");
+
             keyboardHook.OnKeyboardEvent += KeyboardHook_OnKeyboardEvent;
 
             mouseHook.OnMouseEvent += MouseHook_OnMouseEvent;
             mouseHook.OnMouseMove += MouseHook_OnMouseMove;
             mouseHook.OnMouseWheelEvent += MouseHook_OnMouseWheelEvent;
+
+            string folder = @"C:\Users\Acer\Documents";
+            string pathString = System.IO.Path.Combine(folder, "automation");
+
+            string[] file;
+
+            if (Directory.Exists(pathString))
+            {
+                file = Directory.GetFiles(pathString);
+
+                foreach (string x in file)
+                {
+                    FileInfo fi = new FileInfo(x);
+                    myFile.Add(new Filess() { Name = fi.Name, FilePath = fi.FullName, Type = fi.Extension });
+                    fileLIstView.Items.Add(new Filess() { Name = fi.Name, FilePath = fi.FullName, Type = fi.Extension });
+                }
+            }
+
+
         }
 
         private void Window_Closed(object sender, EventArgs e)
         {
             keyboardHook.Uninstall();
             mouseHook.Uninstall();
+
+            string folder = @"C:\Users\Acer\Documents";
+            string pathString = System.IO.Path.Combine(folder, "automation");
+
+            string[] fileName;
+
+            if (!Directory.Exists(pathString))
+            {
+                Directory.CreateDirectory(pathString);
+                foreach (var x in myFile)
+                {
+
+                    string pathFile = System.IO.Path.Combine(pathString, x.Name);
+                    File.Copy(x.FilePath, pathFile);
+                }
+            }
+            else
+            {
+                fileName = Directory.GetFiles(pathString);
+                bool found = false;
+                foreach (string x in fileName)
+                {
+                    foreach (var j in myFile)
+                    {
+                        if (!x.Equals(j.FilePath))
+                        {
+                            string pathFile = System.IO.Path.Combine(pathString, j.Name);
+                            if (!j.FilePath.Equals(pathFile))
+                            {
+                                File.Copy(j.FilePath, pathFile);
+                                found = true;
+                                break;
+                            }
+
+                        }
+                    }
+                    if (found == true)
+                    {
+                        break;
+                    }
+                }
+
+            }
         }
 
         #region Mouse events
@@ -243,12 +306,12 @@ namespace FileAutomation_1._0
                 var position = Control.MousePosition;
 
                 System.Windows.Point coordinates = new System.Windows.Point(position.X, position.Y);
-                inspectBox.Text = string.Format("Title: {0}", windowTitle);
+                //inspectBox.Text = string.Format("Title: {0}", windowTitle);
 
                 try
                 {
                     AutomationElement targetApp = AutomationElement.FromPoint(coordinates);
-
+                    /*
                     inspectBox.Text += "\n";
                     inspectBox.Text += string.Format("" +
                         "Name: {0}\n" +
@@ -258,7 +321,7 @@ namespace FileAutomation_1._0
                         targetApp.Current.Name,
                         targetApp.Current.AutomationId,
                         GetText(targetApp),
-                        targetApp.Current.ControlType);
+                        targetApp.Current.ControlType);*/
 
                     //desktop = GetDC(IntPtr.Zero);
                     //using (System.Drawing.Graphics g = System.Drawing.Graphics.FromHdc(desktop))
@@ -747,9 +810,13 @@ namespace FileAutomation_1._0
                 FileInfo fi = new FileInfo(ofd.FileName);
 
                 //var lastItem = (Filess)listView.Items[fileLIstView.Items.Count - 1];
-
+                myFile.Add(new Filess() { Name = fi.Name, FilePath = fi.FullName, Type = fi.Extension });
                 fileLIstView.Items.Add(new Filess() { Name = fi.Name, FilePath = fi.FullName, Type = fi.Extension });
+
                 FileViewer.DisplayFromFile(ofd.FileName);
+                FileViewer.Focus();
+                //FileViewer.DisplayFirstPage();
+                UpdatePageCount();
 
             }
 
@@ -758,10 +825,24 @@ namespace FileAutomation_1._0
         private void fileLIstView_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
             Filess f = (Filess)fileLIstView.SelectedItem;
-            FileViewer.DisplayFromFile(f.FilePath);
+            if (f != null)
+            {
+                FileViewer.DisplayFromFile(f.FilePath);
+                FileViewer.Focus();
+                DisplayFirstPage();
+                UpdatePageCount();
+            }
 
         }
 
+        private void DisplayFirstPage()
+        {
+            //FileViewer.DisplayFirstPage();
+            if (FileViewer.GetStat() != GdPictureStatus.OK)
+            {
+                System.Windows.MessageBox.Show("Error: " + FileViewer.GetStat());
+            }
+        }
         /*private void searcWord(string fileName)
         {
             string filePath = fileName;
@@ -773,6 +854,46 @@ namespace FileAutomation_1._0
             int count = dc.Content.Find(regex).Count();
 
         }*/
+
+
+        private void PreviousPageCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            if (FileViewer != null)
+                if (FileViewer.PageCount > 0 && FileViewer.CurrentPage > 1)
+                    e.CanExecute = true;
+                else
+                    e.CanExecute = false;
+        }
+
+        private void PreviousPageCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            FileViewer.DisplayPreviousPage();
+            UpdatePageCount();
+            if (FileViewer.GetStat() != GdPictureStatus.OK)
+            {
+                System.Windows.MessageBox.Show("Error: " + FileViewer.GetStat());
+            }
+        }
+
+        private void NextPageCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            if (FileViewer != null)
+                if (FileViewer.PageCount > 0 && FileViewer.CurrentPage != FileViewer.PageCount)
+                    e.CanExecute = true;
+
+                else
+                    e.CanExecute = false;
+        }
+
+        private void NextPageCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            FileViewer.DisplayNextPage();
+            UpdatePageCount();
+            if (FileViewer.GetStat() != GdPictureStatus.OK)
+            {
+                System.Windows.MessageBox.Show("Error: " + FileViewer.GetStat());
+            }
+        }
 
 
 
@@ -789,30 +910,6 @@ namespace FileAutomation_1._0
                 Window.ShowDialog();
             }
 
-        }
-
-        private void saveFile_Click(object sender, RoutedEventArgs e)
-        {
-            List<string> content = new List<string>();
-
-            foreach (var x in recordList)
-            {
-
-                var result = x.Id + " " + x.Content + " " + x.Type;
-                content.Add(result);
-
-            }
-
-            var result2 = string.Join("\n", content);
-            System.Windows.MessageBox.Show(result2, "My App", MessageBoxButton.OK, MessageBoxImage.Information);
-
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "Text file(*.txt)|*.txt";
-
-            if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                File.WriteAllText(sfd.FileName, result2);
-            }
         }
 
         private void openApp(object sender, MouseButtonEventArgs e)
@@ -924,7 +1021,7 @@ namespace FileAutomation_1._0
                 this.WindowState = WindowState.Normal;
                 System.Drawing.Rectangle rect = new System.Drawing.Rectangle(shotData.x, shotData.y, shotData.width, shotData.height);
 
-                Bitmap bmp = new Bitmap(rect.Width, rect.Height, PixelFormat.Format32bppArgb);
+                Bitmap bmp = new Bitmap(rect.Width, rect.Height, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
 
                 Graphics g = Graphics.FromImage(bmp);
                 g.CopyFromScreen(rect.Left, rect.Top, 0, 0, shotData.size, CopyPixelOperation.SourceCopy);
@@ -977,6 +1074,605 @@ namespace FileAutomation_1._0
         private void Clear_Click(object sender, RoutedEventArgs e)
         {
             screenShot_picture.Source = null;
+        }
+
+
+        private void btnClear_Click(object sender, RoutedEventArgs e)
+        {
+            if (listView.Items.Count > 0)
+            {
+                //MessageBoxResult result = System.Windows.MessageBox.Show("Do you want to record again?",
+                //                          "Confirmation",
+                //                          MessageBoxButton.YesNo,
+                //                          MessageBoxImage.Question);
+                //switch (result)
+                //{
+                //    case MessageBoxResult.Yes:
+                //        listView.Items.Clear();
+                //        recordList = new List<Record>();
+                //        count = 0;
+                //        break;
+                //    default:
+                //        return;
+                //}
+
+                listView.Items.Clear();
+                recordList = new List<Record>();
+                count = 0;
+            }
+        }
+
+        private void btn_saveAutomation_Click(object sender, RoutedEventArgs e)
+        {
+            if (listView.Items.Count > 0)
+            {
+
+                List<string> content = new List<string>();
+                var result = "";
+                foreach (var x in recordList)
+                {
+
+                    switch (x.Type)
+                    {
+                        case Constants.MOUSE:
+                            result = x.EventMouse.Action + " " + x.EventMouse.Location.X + " " + x.EventMouse.Location.Y;
+                            content.Add(result);
+                            break;
+                        case Constants.KEYBOARD:
+                            result = x.EventKey.Key.ToString() + " " + x.EventKey.Action;
+                            content.Add(result);
+                            break;
+                        case Constants.WAIT:
+                            Thread.Sleep(x.WaitMs);
+                            break;
+                        default:
+                            break;
+                    }
+
+                }
+
+                var result2 = string.Join("\n", content);
+                //System.Windows.MessageBox.Show(result2, "My App", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.Filter = "Text file(*.txt)|*.txt";
+
+                if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    File.WriteAllText(sfd.FileName, result2);
+                }
+
+            }
+        }
+
+        private void btn_loadAutomation_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            string[] lines;
+            var list = new List<string>();
+            string word;
+            int offset = 0;
+            List<MouseEvent> mouseEvent = new List<MouseEvent>();
+            List<KeyboardEvent> keyEvent = new List<KeyboardEvent>();
+
+            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+
+                var fileStream = new FileStream(ofd.FileName, FileMode.Open, FileAccess.Read);
+                using (var streamReader = new StreamReader(fileStream, Encoding.UTF8))
+                {
+                    string line;
+                    while ((line = streamReader.ReadLine()) != null)
+                    {
+                        list.Add(line);
+                    }
+                }
+                lines = list.ToArray();
+
+                word = string.Join("\n", lines);
+                //rtb_loadAutomationText.Document.Blocks.Clear();
+                //rtb_loadAutomationText.Document.Blocks.Add(new System.Windows.Documents.Paragraph(new Run(word)));
+
+                foreach (var w in lines)
+                {
+                    string[] text = w.Split(null);
+
+
+                    if (!w.Contains("KEY"))
+                    {
+                        string a = text[0];
+                        double x = Convert.ToDouble(text[1]);
+                        double y = Convert.ToDouble(text[2]);
+
+                        CursorPoint point = new CursorPoint(x, y);
+                        if (a.Contains("Left"))
+                        {
+                            offset = 0;
+                            if (a.Equals("LeftUp"))
+                            {
+                                mouseEvent.Add(new MouseEvent
+                                {
+                                    Location = point,
+                                    Action = MouseHook.MouseEvents.LeftUp + offset
+                                });
+                                LogMouseEvents(new MouseEvent { Location = point, Action = MouseHook.MouseEvents.LeftUp + offset });
+                            }
+
+
+                            if (a.Equals("LeftDown"))
+                            {
+                                mouseEvent.Add(new MouseEvent
+                                {
+                                    Location = point,
+                                    Action = MouseHook.MouseEvents.LeftDown + offset
+                                });
+                                LogMouseEvents(new MouseEvent { Location = point, Action = MouseHook.MouseEvents.LeftDown + offset });
+                            }
+
+
+                        }
+
+                        if (a.Contains("Right"))
+                        {
+                            offset = 0;
+                            if (a.Equals("RightUp"))
+                            {
+                                mouseEvent.Add(new MouseEvent
+                                {
+                                    Location = point,
+                                    Action = MouseHook.MouseEvents.RightUp + offset
+                                });
+
+                                LogMouseEvents(new MouseEvent { Location = point, Action = MouseHook.MouseEvents.RightUp + offset });
+                            }
+
+
+                            if (a.Equals("RightDown"))
+                            {
+                                mouseEvent.Add(new MouseEvent
+                                {
+                                    Location = point,
+                                    Action = MouseHook.MouseEvents.RightDown + offset
+                                });
+
+                                LogMouseEvents(new MouseEvent { Location = point, Action = MouseHook.MouseEvents.RightDown + offset });
+                            }
+
+
+                        }
+
+                        if (a.Contains("Middle"))
+                        {
+                            offset = 6;
+                        }
+
+                        if (a.Contains("Move"))
+                        {
+                            mouseEvent.Add(new MouseEvent
+                            {
+                                Location = point,
+                                Action = MouseHook.MouseEvents.MouseMove
+                            });
+                            LogMouseEvents(new MouseEvent { Location = point, Action = MouseHook.MouseEvents.MouseMove });
+                        }
+
+
+                        if (a.Equals("ScrollDown"))
+                        {
+                            mouseEvent.Add(new MouseEvent
+                            {
+                                Location = point,
+                                Action = MouseHook.MouseEvents.ScrollDown + offset
+                            });
+
+                            LogMouseEvents(new MouseEvent { Location = point, Action = MouseHook.MouseEvents.ScrollDown + offset });
+                        }
+
+                        if (a.Equals("ScrollUp"))
+                        {
+                            mouseEvent.Add(new MouseEvent
+                            {
+                                Location = point,
+                                Action = MouseHook.MouseEvents.ScrollUp + offset
+                            });
+
+                            LogMouseEvents(new MouseEvent { Location = point, Action = MouseHook.MouseEvents.ScrollUp + offset });
+                        }
+
+                    }
+
+
+                    if (w.Contains("KEY"))
+                    {
+                        string a = text[0];
+                        //a = a.ToUpper();
+                        //char c = a[0];
+                        string x = text[1];
+
+                        if (x.Equals("KEY_DOWN"))
+                        {
+                            //int code = c;
+                            var key = (Keys)Enum.Parse(typeof(Keys), a);
+                            LogKeyboardEvents(new KeyboardEvent { Key = key, Action = Constants.KEY_DOWN });
+
+                            keyEvent.Add(new KeyboardEvent { Key = key, Action = Constants.KEY_DOWN });
+                        }
+
+                        if (x.Equals("KEY_UP"))
+                        {
+                            //int code = c;
+                            var key = (Keys)Enum.Parse(typeof(Keys), a);
+                            LogKeyboardEvents(new KeyboardEvent { Key = key, Action = Constants.KEY_UP });
+                            keyEvent.Add(new KeyboardEvent { Key = key, Action = Constants.KEY_UP });
+                        }
+
+                    }
+
+
+                }
+
+                /* if (mouseEvent != null)
+                 {
+                     mouseEvent.ForEach(me => LogMouseEvents(me));
+                 }
+                */
+            }
+
+        }
+
+        private void tbCurrentPage_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            int page = 0;
+            if (int.TryParse(tbCurrentPage.Text, out page))
+            {
+                if (page > 0 & page <= FileViewer.PageCount)
+                {
+                    FileViewer.DisplayPage(page);
+                    UpdateaNavigationToolbar();
+                }
+            }
+        }
+
+        private void UpdateaNavigationToolbar()
+        {
+            int currentPage = FileViewer.CurrentPage;
+            tbCurrentPage.Text = currentPage.ToString();
+
+            lblPageCount.Content = "/ " + FileViewer.PageCount;
+
+
+        }
+
+        private void UpdatePageCount()
+        {
+            if (FileViewer.PageCount == 0)
+            {
+                tbCurrentPage.Text = "0";
+                lblPageCount.Content = "/ 0";
+                lblPageCount.Content = "/ " + FileViewer.PageCount;
+
+            }
+            else
+            {
+                UpdateaNavigationToolbar();
+
+            }
+        }
+
+
+        private string GetDocumentTypeLabel()
+        {
+            return FileViewer.GetDocumentType().ToString().Replace("DocumentType", "");
+        }
+
+        private void btn_deleteFile_Click(object sender, RoutedEventArgs e)
+        {
+            Filess file = (Filess)fileLIstView.SelectedItem;
+            if (file != null)
+            {
+                int x = fileLIstView.Items.IndexOf(fileLIstView.SelectedItem);
+                myFile.RemoveAt(x);
+                fileLIstView.Items.RemoveAt(fileLIstView.Items.IndexOf(fileLIstView.SelectedItem));
+
+                //File.Delete(file.FilePath);
+                FileViewer.Clear();
+            }
+
+        }
+
+        private void btn_refresh_Click(object sender, RoutedEventArgs e)
+        {
+            string folder = @"C:\Users\Acer\Documents";
+            string pathString = System.IO.Path.Combine(folder, "automation");
+            fileLIstView.Items.Clear();
+            myFile.Clear();
+
+            string[] file;
+
+            if (Directory.Exists(pathString))
+            {
+                file = Directory.GetFiles(pathString);
+
+                foreach (string x in file)
+                {
+                    FileInfo fi = new FileInfo(x);
+                    myFile.Add(new Filess() { Name = fi.Name, FilePath = fi.FullName, Type = fi.Extension });
+                    fileLIstView.Items.Add(new Filess() { Name = fi.Name, FilePath = fi.FullName, Type = fi.Extension });
+                }
+            }
+        }
+
+        #region search
+
+        private int _currentSearchOccurence;
+
+        private void ResetSearch()
+        {
+            lstSearchResults.Items.Clear();
+            FileViewer.RemoveAllRegions();
+            _currentSearchOccurence = 0;
+        }
+        private void SearchCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = !string.IsNullOrWhiteSpace(tbSearch.Text); ;
+        }
+
+        private delegate void UpdateProgressBarDelegate(
+        System.Windows.DependencyProperty dp, Object value);
+
+        private void SearchNextCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            Search(true);
+        }
+
+        private void SearchPreviousCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            Search(false);
+        }
+
+        private void SearchCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(tbSearch.Text))
+            {
+                return;
+            }
+
+            ResetSearch();
+            int page = 0;
+            bool found = false;
+            if (rbAllPages.IsChecked == true)
+            {
+                page = 1;
+            }
+            else
+            {
+                page = FileViewer.CurrentPage;
+            }
+            bool finish = false;
+            int countResults = 0;
+            Cursor = System.Windows.Input.Cursors.Wait;
+            searchProgressBar.Value = 1;
+            searchProgressBar.Maximum = FileViewer.PageCount;
+            stSearchProgress.Visibility = System.Windows.Visibility.Visible;
+
+            UpdateProgressBarDelegate updatePbDelegate =
+       new UpdateProgressBarDelegate(searchProgressBar.SetValue);
+            double value = searchProgressBar.Value;
+            while (!finish)
+            {
+                lblSearchResults.Text = "Find results for page " + page + " of " + FileViewer.PageCount;
+                value++;
+                Dispatcher.Invoke(updatePbDelegate,
+           System.Windows.Threading.DispatcherPriority.Background,
+           new object[] { System.Windows.Controls.ProgressBar.ValueProperty, value });
+                ;
+
+
+                int count = GetSearchResultCount(page, tbSearch.Text);
+                if (count > 0)
+                {
+                    found = true;
+                    String content = "Page " + page + ", ";
+                    content += count + " occurence(s) found";
+                    System.Windows.Controls.ListViewItem item = new System.Windows.Controls.ListViewItem();
+                    item.Content = content;
+                    item.Name = "Page" + page;
+                    item.Tag = page;
+                    lstSearchResults.Items.Add(item);
+                }
+                countResults += count;
+                page++;
+                finish = rbCurrentPage.IsChecked == true || page > FileViewer.PageCount;
+            }
+
+            Cursor = System.Windows.Input.Cursors.Arrow;
+
+            lblSearchResults.Text = "";
+            stSearchProgress.Visibility = System.Windows.Visibility.Hidden;
+
+            if (!found)
+            {
+                System.Windows.MessageBox.Show("No match found", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
+
+        private bool Search(bool ascending)
+        {
+            bool go = true;
+            int page = FileViewer.CurrentPage;
+            bool found = false;
+            int newOccurence = 0;
+            double occurenceLeft = 0;
+            double occurenceTop = 0;
+            double occurenceWidth = 0;
+            double occurenceHeight = 0;
+            if (ascending)
+            {
+                newOccurence = _currentSearchOccurence + 1;
+            }
+            else
+            {
+                newOccurence = _currentSearchOccurence - 1;
+            }
+            while (go)
+            {
+                if (FileViewer.SearchText(page, tbSearch.Text, newOccurence, chkCaseSensitive.IsChecked == true, chkWholeWord.IsChecked == true, ref occurenceLeft, ref occurenceTop, ref occurenceWidth, ref occurenceHeight))
+                {
+                    if (page != FileViewer.CurrentPage)
+                    {
+                        FileViewer.DisplayPage(page);
+                    }
+                    FileViewer.RemoveAllRegions();
+                    AddSearchRegion(newOccurence, occurenceLeft, occurenceTop, occurenceWidth, occurenceHeight, true);
+                    _currentSearchOccurence = newOccurence;
+                    found = true;
+                    go = false;
+                }
+                else
+                {
+                    if (rbAllPages.IsChecked == true)
+                    {
+                        if (ascending)
+                        {
+                            page++;
+                            newOccurence = 1;
+                        }
+                        else
+                        {
+                            page--;
+                            newOccurence = GetSearchResultCount(page, tbSearch.Text);
+                        }
+                        if (page == 0 | page > FileViewer.PageCount)
+                        {
+                            go = false;
+                        }
+                    }
+                    else
+                    {
+                        go = false;
+                    }
+                }
+            }
+            if (!found)
+            {
+                System.Windows.MessageBox.Show(this, "No match found !", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            return found;
+        }
+
+        private void AddSearchRegion(int occurence, double leftCoordinate, double topCoordinate, double regionWidth, double regionheight, bool ensureVisibility)
+        {
+            int searchRegion = FileViewer.AddRegion("SearchResult" + Convert.ToString(occurence), leftCoordinate, topCoordinate, regionWidth, regionheight, Colors.Yellow, GdPicture14.WPF.GdViewer.RegionFillMode.Multiply);
+            FileViewer.SetRegionEditable(searchRegion, false);
+            if (ensureVisibility)
+            {
+                FileViewer.EnsureRegionVisibility(searchRegion);
+            }
+        }
+
+        private void lstSearchResults_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            if (lstSearchResults.SelectedItems.Count != 0)
+            {
+                FileViewer.RemoveAllRegions();
+                System.Windows.Controls.ListViewItem item = (System.Windows.Controls.ListViewItem)lstSearchResults.SelectedItems[0];
+                int page = Convert.ToInt32(item.Tag);
+                if (FileViewer.CurrentPage != page)
+                {
+                    FileViewer.DisplayPage(page);
+                }
+                int occurence = 1;
+                double occurenceLeft = 0;
+                double occurenceTop = 0;
+                double occurenceWidth = 0;
+                double occurenceHeight = 0;
+                while (FileViewer.SearchText(page, tbSearch.Text, occurence, chkCaseSensitive.IsChecked == true, chkWholeWord.IsChecked == true, ref occurenceLeft, ref occurenceTop, ref occurenceWidth, ref occurenceHeight))
+                {
+                    AddSearchRegion(occurence, occurenceLeft, occurenceTop, occurenceWidth, occurenceHeight, occurence == 1);
+                    occurence++;
+                }
+            }
+        }
+
+        private int GetSearchResultCount(int page, string searchedTerm)
+        {
+            return FileViewer.GetTextOccurrenceCount(page, searchedTerm, chkCaseSensitive.IsChecked == true, chkWholeWord.IsChecked == true);
+        }
+
+        //private void openPDF_Click(object sender, RoutedEventArgs e)
+        //{
+        //    OpenFileDialog ofd = new OpenFileDialog();
+        //    ofd.Filter = "PDF Files|*.pdf";
+
+        //    if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+        //    {
+
+        //        FileViewer.DisplayFromFile(ofd.FileName);
+
+
+        //    }
+        //}
+
+        #endregion
+
+        private void searchText()
+        {
+            var text = searchText_tb.Text;
+            List<Filess> FileSearch = new List<Filess>();
+            int page = 1;
+            bool found = false;
+            bool finish = false;
+            int countResults = 0;
+
+            foreach (var file in myFile)
+            {
+                FileInfo fi = new FileInfo(file.FilePath);
+                FileViewer.DisplayFromFile(file.FilePath);
+                while (!finish)
+                {
+
+                    int count = GetSearchResultCount(page, text);
+                    if (count > 0)
+                    {
+                        found = true;
+                        FileSearch.Add(new Filess() { Name = fi.Name, FilePath = fi.FullName, Type = fi.Extension });
+                        finish = true;
+                    }
+                    countResults += count;
+                    page++;
+                    finish = page > FileViewer.PageCount;
+                }
+
+
+                if (!found)
+                {
+                    System.Windows.MessageBox.Show("No match found for " + file.Name, "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            }
+
+            foreach (var x in FileSearch)
+            {
+                FileInfo info = new FileInfo(x.FilePath);
+                fileLIstView.Items.Clear();
+                fileLIstView.Items.Add(new Filess() { Name = info.Name, FilePath = info.FullName, Type = info.Extension });
+            }
+
+        }
+
+        private void searchWord_Click(object sender, RoutedEventArgs e)
+        {
+            if (!searchText_tb.Text.Equals(""))
+            {
+                searchText();
+                tbSearch.Text = searchText_tb.Text;
+                FileViewer.Clear();
+            }
+            else
+            {
+                System.Windows.MessageBox.Show("Please enter word to search!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+
         }
 
         /*private void richbutton_Click(object sender, RoutedEventArgs e)
