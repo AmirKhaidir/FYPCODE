@@ -9,7 +9,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using Dragablz;
 using FileAutomation_1._0;
 using System;
 using System.Diagnostics;
@@ -33,35 +32,39 @@ using System.Windows.Shapes;
 using System.Windows.Shell;
 
 
-namespace FileAutomation_1._0 {
-    
-    
+namespace FileAutomation_1._0
+{
+
+
     /// <summary>
     /// App
     /// </summary>
-    public partial class App : System.Windows.Application {
-        
+    public partial class App : System.Windows.Application
+    {
+
         /// <summary>
         /// InitializeComponent
         /// </summary>
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "4.0.0.0")]
-        public void InitializeComponent() {
-            
-            #line 6 "..\..\App.xaml"
+        public void InitializeComponent()
+        {
+
+#line 6 "..\..\App.xaml"
             this.StartupUri = new System.Uri("MainWindow.xaml", System.UriKind.Relative);
-            
-            #line default
-            #line hidden
+
+#line default
+#line hidden
         }
-        
+
         /// <summary>
         /// Application Entry Point.
         /// </summary>
         [System.STAThreadAttribute()]
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "4.0.0.0")]
-        public static void Main() {
+        public static void Main()
+        {
             FileAutomation_1._0.App app = new FileAutomation_1._0.App();
             app.InitializeComponent();
             app.Run();

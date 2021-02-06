@@ -5,13 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FileAutomation_1._0.Views"
         mc:Ignorable="d"
-        Title="ExtracctText" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="ExtracctText" Height="494.366" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <RichTextBox x:Name="ExtractedTextBox" HorizontalAlignment="Left" Height="351" Margin="10,59,0,0" VerticalAlignment="Top" Width="774" HorizontalScrollBarVisibility="Auto"
                          VerticalScrollBarVisibility="Auto">
             <FlowDocument/>
         </RichTextBox>
         <Label Content="Extracted Text: " HorizontalAlignment="Left" Margin="10,19,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="save" Content="Save" HorizontalAlignment="Left" Margin="555,425,0,0" VerticalAlignment="Top" Width="75" Click="save_Click"/>
+        <Button x:Name="close" Content="Close" HorizontalAlignment="Left" Margin="683,425,0,0" VerticalAlignment="Top" Width="75" Click="close_Click"/>
 
     </Grid>
 </Window>
