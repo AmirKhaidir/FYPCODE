@@ -149,20 +149,21 @@
                                 </StackPanel>
                             </Button>
                             <Button
-                x:Name="btnClear"
-                Grid.Column="3"
-                Margin="0,0,5,0"
-                Background="Transparent"
-                BorderThickness="0" Click="btnClear_Click">
+                            x:Name="btn_loadAutomation"
+                            Grid.Column="3"
+                            Margin="0,0,0,0"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Click="btn_loadAutomation_Click" Width="106">
                                 <StackPanel>
-                                    <Image Source="Images/clear.png" 
-                                    RenderOptions.BitmapScalingMode="NearestNeighbor"
+                                    <Image Source="Images/sync.png" RenderOptions.BitmapScalingMode="NearestNeighbor"
                                     Stretch="Fill"
                                     Width="64"
                                     Height="64"/>
-                                    <TextBlock TextAlignment="Center">Clear</TextBlock>
+                                    <TextBlock Margin="0" TextAlignment="Center"><Run Text="Load save"/></TextBlock>
                                 </StackPanel>
                             </Button>
+
                             <Button
                 x:Name="btn_saveAutomation"
                 Grid.Column="4"
@@ -282,7 +283,7 @@
                             <ListView
                             x:Name="listView"
                             Width="593"
-                            Height="421"
+                            Height="440"
                             Margin="0,0,0.4,0"
                             MouseLeave="ListView_MouseLeave"
                             ScrollViewer.CanContentScroll="True"
@@ -312,17 +313,18 @@
                         </Grid>
                         <Grid Grid.Row="3">
                             <Button
-                            x:Name="btn_loadAutomation"
-                            Margin="0,0,0,0"
-                            Background="Transparent"
-                            BorderThickness="0"
-                            Click="btn_loadAutomation_Click" Width="106">
+                x:Name="btnClear"
+                Grid.Column="3"
+                Margin="0,0,5,0"
+                Background="Transparent"
+                BorderThickness="0" Click="btnClear_Click">
                                 <StackPanel>
-                                    <Image Source="Images/sync.png" RenderOptions.BitmapScalingMode="NearestNeighbor"
+                                    <Image Source="Images/clear.png" 
+                                    RenderOptions.BitmapScalingMode="NearestNeighbor"
                                     Stretch="Fill"
                                     Width="64"
                                     Height="64"/>
-                                    <TextBlock Margin="0" TextAlignment="Center"><Run Text="Load save"/></TextBlock>
+                                    <TextBlock TextAlignment="Center">Clear</TextBlock>
                                 </StackPanel>
                             </Button>
                         </Grid>

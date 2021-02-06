@@ -21,6 +21,7 @@ using System.Windows.Media.Imaging;
 using System.Drawing.Imaging;
 using System.Text;
 using System.Windows.Media;
+using System.Diagnostics;
 
 namespace FileAutomation_1._0
 {
@@ -164,25 +165,37 @@ namespace FileAutomation_1._0
             {
                 fileName = Directory.GetFiles(pathString);
                 bool found = false;
-                foreach (string x in fileName)
+                if (fileName.Length > 0)
                 {
-                    foreach (var j in myFile)
-                    {
-                        if (!x.Equals(j.FilePath))
-                        {
-                            string pathFile = System.IO.Path.Combine(pathString, j.Name);
-                            if (!j.FilePath.Equals(pathFile))
-                            {
-                                File.Copy(j.FilePath, pathFile);
-                                found = true;
-                                break;
-                            }
 
+                    foreach (string x in fileName)
+                    {
+                        foreach (var j in myFile)
+                        {
+                            if (!x.Equals(j.FilePath))
+                            {
+                                string pathFile = System.IO.Path.Combine(pathString, j.Name);
+                                if (!j.FilePath.Equals(pathFile))
+                                {
+                                    File.Copy(j.FilePath, pathFile);
+                                    found = true;
+                                    break;
+                                }
+
+                            }
+                        }
+                        if (found == true)
+                        {
+                            break;
                         }
                     }
-                    if (found == true)
+                }
+                else
+                {
+                    foreach (var x in myFile)
                     {
-                        break;
+                        string pathFile = System.IO.Path.Combine(pathString, x.Name);
+                        File.Copy(x.FilePath, pathFile);
                     }
                 }
 
@@ -1140,8 +1153,8 @@ namespace FileAutomation_1._0
                 if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     File.WriteAllText(sfd.FileName, result2);
+                    System.Windows.MessageBox.Show("Successfully saved!");
                 }
-
             }
         }
 
@@ -1368,15 +1381,35 @@ namespace FileAutomation_1._0
         private void btn_deleteFile_Click(object sender, RoutedEventArgs e)
         {
             Filess file = (Filess)fileLIstView.SelectedItem;
-            if (file != null)
-            {
-                int x = fileLIstView.Items.IndexOf(fileLIstView.SelectedItem);
-                myFile.RemoveAt(x);
-                fileLIstView.Items.RemoveAt(fileLIstView.Items.IndexOf(fileLIstView.SelectedItem));
+            FileViewer.Clear();
+            MessageBoxResult result = System.Windows.MessageBox.Show("Are sure to delete the file?", "Delete file", MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
-                //File.Delete(file.FilePath);
-                FileViewer.Clear();
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+                    if (file != null)
+                    {
+                        int x = fileLIstView.Items.IndexOf(fileLIstView.SelectedItem);
+                        myFile.RemoveAt(x);
+                        fileLIstView.Items.RemoveAt(x);
+                        try
+                        {
+                            File.Delete(file.FilePath);
+                        }
+                        catch (IOException ioex)
+                        {
+                            Console.WriteLine(ioex.Message);
+                        }
+
+
+                    }
+                    break;
+                case MessageBoxResult.No:
+
+                    break;
             }
+
+
 
         }
 
@@ -1619,30 +1652,33 @@ namespace FileAutomation_1._0
         {
             var text = searchText_tb.Text;
             List<Filess> FileSearch = new List<Filess>();
-            int page = 1;
+            ResetSearch();
             bool found = false;
             bool finish = false;
-            int countResults = 0;
+            int count = 0;
 
             foreach (var file in myFile)
             {
+                int page = 1;
+                finish = false;
+                count = 0;
                 FileInfo fi = new FileInfo(file.FilePath);
                 FileViewer.DisplayFromFile(file.FilePath);
                 while (!finish)
                 {
 
-                    int count = GetSearchResultCount(page, text);
+                    count = GetSearchResultCount(page, text);
                     if (count > 0)
                     {
                         found = true;
                         FileSearch.Add(new Filess() { Name = fi.Name, FilePath = fi.FullName, Type = fi.Extension });
-                        finish = true;
+                        break;
+
                     }
-                    countResults += count;
+
                     page++;
                     finish = page > FileViewer.PageCount;
                 }
-
 
                 if (!found)
                 {
@@ -1650,10 +1686,12 @@ namespace FileAutomation_1._0
                 }
             }
 
+            fileLIstView.Items.Clear();
+
+
             foreach (var x in FileSearch)
             {
                 FileInfo info = new FileInfo(x.FilePath);
-                fileLIstView.Items.Clear();
                 fileLIstView.Items.Add(new Filess() { Name = info.Name, FilePath = info.FullName, Type = info.Extension });
             }
 

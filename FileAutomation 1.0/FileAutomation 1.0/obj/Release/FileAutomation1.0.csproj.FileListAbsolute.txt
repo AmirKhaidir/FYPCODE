@@ -1,0 +1,11 @@
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Release\FileAutomation1.0.csprojAssemblyReference.cache
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Release\test.g.cs
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Release\Views\CreateInsertKeyWindow.g.cs
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Release\Views\CreateManualClickWindow.g.cs
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Release\Views\CreateManualTypeKeyWindow.g.cs
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Release\Views\CreateWaitWindow.g.cs
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Release\Views\ExtracctText.g.cs
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Release\Views\SelectArea.g.cs
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Release\App.g.cs
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Release\FileAutomation 1.0_MarkupCompile.cache
+C:\Users\Acer\Documents\GitHub\FYPCODE\FileAutomation 1.0\FileAutomation 1.0\obj\Release\FileAutomation 1.0_MarkupCompile.lref
